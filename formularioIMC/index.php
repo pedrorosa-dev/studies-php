@@ -25,7 +25,11 @@
   if ($_POST) {
     $peso = floatval($_POST['peso']);
     $altura = floatval($_POST['altura']);
-    $imc = $peso / ($altura ** 2);
+    function calcularIMC($p, $a)
+    {
+      return $p / ($a ** 2);
+    }
+    $imc = calcularIMC($peso, $altura);
     echo "<p>Seu IMC é:</p>" . number_format($imc, 2);
     if ($imc < 18.5) {
       echo "<p>Abaixo do peso</p>";
